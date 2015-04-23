@@ -1,6 +1,16 @@
-frontend-nanodegree-arcade-game
-===============================
+Game rules:
+1. Move the vehicle across the field without crashing into the bugs and you win and start over;
+2. Any time there is a crash between the vehicle and any one of the bug, you lose, game reset;
+3. You can only move the vehicle with one of the four arrow keys: up, left, down and right;
 
-Students should use this rubric: https://www.udacity.com/course/viewer#!/c-ud015/l-3072058665/m-3072588797
+Have fun!
 
-for self-checking their submission.
+
+
+
+
+
+
+
+
+

@@ -64,9 +64,22 @@ var Engine = (function(global) {
      * game loop.
      */
     function init() {
-        reset();
+        //reset();
         lastTime = Date.now();
         main();
+    }
+    /*
+     *Detect if there is a collision between any one of the enemies and the player
+    */
+    function checkCollisions() {
+        collision = false;
+        for(i = 0; i < allEnemies.length; i++) {
+            if (allEnemies[i].collides(player)) {
+                collision = true;
+                break;
+            }
+        }
+        return collision;
     }
 
     /* This function is called by main (our game loop) and itself calls all
@@ -78,9 +91,11 @@ var Engine = (function(global) {
      * functionality this way (you could just implement collision detection
      * on the entities themselves within your app.js file).
      */
+
     function update(dt) {
         updateEntities(dt);
-        // checkCollisions();
+       if(checkCollisions())
+            player.startAllOver();
     }
 
     /* This is called by the update function  and loops through all of the
