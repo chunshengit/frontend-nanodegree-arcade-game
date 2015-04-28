@@ -57,7 +57,7 @@ var Engine = (function(global) {
          * function again as soon as the browser is able to draw another frame.
          */
         win.requestAnimationFrame(main);
-    };
+    }
 
     /* This function does some initial setup that should only occur once,
      * particularly setting the lastTime variable that is required for the
@@ -72,8 +72,8 @@ var Engine = (function(global) {
      *Detect if there is a collision between any one of the enemies and the player
     */
     function checkCollisions() {
-        collision = false;
-        for(i = 0; i < allEnemies.length; i++) {
+        var collision = false;
+        for ( var i = 0; i < allEnemies.length; i++) {
             if (allEnemies[i].collides(player)) {
                 collision = true;
                 break;
