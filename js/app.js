@@ -72,15 +72,12 @@ Player.prototype.update = function () {
         this.x = ctx.canvas.width - 100;
     }
 
-    if (this.y < 0) {
-        this.y = 0;
+    // If Player survives after crossing over the enemy field, Score and reset the game.
+    if (this.y <= 0) {
+        this.startAllOver();
     } else if (this.y > ctx.canvas.height - 170) {
         this.y = ctx.canvas.height - 170;
     }
-    // If Player survives after crossing over the enemy field, Score and reset the game.
-    if (this.y < 2)
-        this.startAllOver();
-
     this.render();
 };
 
